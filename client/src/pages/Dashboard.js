@@ -38,15 +38,10 @@ const Dashboard = () => {
 
   const fetchDashboardData = async () => {
     try {
-      // Fetch user's videos
-      const videosResponse = await axios.get('/api/videos', {
-        params: { uploader: user.id }
-      });
+      // Fetch user's videos using dedicated endpoint
+      const videosResponse = await axios.get('/api/videos/my-videos');
       
-      // Filter to only user's videos (since the API might return all videos)
-      const userVids = (videosResponse.data.videos || []).filter(
-        video => video.uploader._id === user.id
-      );
+      const userVids = videosResponse.data.videos || [];
       
       setUserVideos(userVids);
 

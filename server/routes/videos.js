@@ -45,10 +45,19 @@ router.get('/', optionalAuth, async (req, res) => {
       category, 
       search, 
       sortBy = 'createdAt',
-      order = 'desc'
+      order = 'desc',
+      uploader
     } = req.query;
 
-    const query = { isPublic: true, processingStatus: 'completed' };
+    let query = {};
+    
+    // If uploader is specified and user is authenticated, show their videos (including private)
+    if (uploader && req.user && req.user.id === uploader) {
+      query = { uploader: uploader };
+    } else {
+      // Default: show only public completed videos
+      query = { isPublic: true, processingStatus: 'completed' };
+    }
     
     if (category && category !== 'all') {
       query.category = category;
@@ -88,6 +97,44 @@ router.get('/', optionalAuth, async (req, res) => {
   } catch (error) {
     console.error('Get videos error:', error);
     res.status(500).json({ message: 'Server error fetching videos' });
+  }
+});
+
+// @route   GET /api/videos/my-videos
+// @desc    Get current user's videos
+// @access  Private
+router.get('/my-videos', auth, async (req, res) => {
+  try {
+    const { page = 1, limit = 20, sortBy = 'createdAt', order = 'desc' } = req.query;
+    
+    const query = { uploader: req.user.id };
+    
+    const sortOptions = {};
+    sortOptions[sortBy] = order === 'desc' ? -1 : 1;
+
+    const videos = await Video.find(query)
+      .populate('uploader', 'username channel.name avatar')
+      .sort(sortOptions)
+      .limit(limit * 1)
+      .skip((page - 1) * limit)
+      .select('-__v');
+
+    const total = await Video.countDocuments(query);
+    const totalPages = Math.ceil(total / limit);
+
+    res.json({
+      videos,
+      pagination: {
+        currentPage: parseInt(page),
+        totalPages,
+        totalVideos: total,
+        hasNextPage: page < totalPages,
+        hasPrevPage: page > 1
+      }
+    });
+  } catch (error) {
+    console.error('Get user videos error:', error);
+    res.status(500).json({ message: 'Server error fetching user videos' });
   }
 });
 
