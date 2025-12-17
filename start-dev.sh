@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# StreamVault Development Setup Script
-echo "🎥 StreamVault Development Setup"
+# Mallard Development Setup Script
+echo "🎥 Mallard Development Setup"
 echo "================================"
 
 # Check if Node.js is installed

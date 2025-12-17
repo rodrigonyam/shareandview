@@ -1,13 +1,13 @@
-# StreamVault - Project Overview
+# Mallard - Project Overview
 
 ## 🎯 Project Status: **COMPLETE MVP**
 
-StreamVault is now a fully functional full-stack video streaming platform with all core features implemented and ready for development/testing.
+Mallard is now a fully functional full-stack video streaming platform with all core features implemented and ready for development/testing.
 
 ## 📁 Project Structure
 
 ```
-streamvault/
+mallard/
 ├── client/                 # React Frontend Application
 │   ├── public/            # Static assets
 │   ├── src/
@@ -134,7 +134,7 @@ streamvault/
 1. **Clone and navigate to project:**
    ```bash
    git clone <repository-url>
-   cd streamvault
+   cd mallard
    ```
 
 2. **Install dependencies:**
@@ -272,7 +272,7 @@ The application includes:
 
 ## 🎯 **Current Status: MVP Complete**
 
-StreamVault now has a complete foundation with:
+Mallard now has a complete foundation with:
 - ✅ Full authentication system
 - ✅ Video upload and management
 - ✅ User channels and subscriptions  

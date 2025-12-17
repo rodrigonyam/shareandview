@@ -1,7 +1,7 @@
 @echo off
-REM StreamVault Development Setup Script for Windows
+REM Mallard Development Setup Script for Windows
 
-echo 🎥 StreamVault Development Setup
+echo 🎥 Mallard Development Setup
 echo ================================
 
 REM Check if Node.js is installed
@@ -26,13 +26,13 @@ echo ⚠️  Please ensure MongoDB is running on your system
 echo    You can install MongoDB locally or use MongoDB Atlas
 echo.
 
-echo 🚀 Starting StreamVault...
+echo 🚀 Starting Mallard...
 echo.
 
 REM Start the backend server
 echo Starting backend server on port 5000...
 cd server
-start "StreamVault Backend" cmd /k "npm run dev"
+start "Mallard Backend" cmd /k "npm run dev"
 
 REM Wait a bit for server to start
 timeout /t 3 >nul
@@ -40,10 +40,10 @@ timeout /t 3 >nul
 REM Start the frontend
 echo Starting frontend development server on port 3000...
 cd ..\client
-start "StreamVault Frontend" cmd /k "npm start"
+start "Mallard Frontend" cmd /k "npm start"
 
 echo.
-echo ✅ StreamVault is now running!
+echo ✅ Mallard is now running!
 echo    Frontend: http://localhost:3000
 echo    Backend:  http://localhost:5000
 echo.

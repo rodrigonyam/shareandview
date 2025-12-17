@@ -17,8 +17,19 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">SV</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center shadow-lg">
+                <span 
+                  className="text-white font-bold text-lg"
+                  style={{
+                    fontFamily: 'serif',
+                    fontStyle: 'italic',
+                    textShadow: '1px 1px 2px rgba(0,0,0,0.3)',
+                    transform: 'rotate(-5deg)',
+                    letterSpacing: '1px'
+                  }}
+                >
+                  M
+                </span>
               </div>
               <span className="text-xl font-bold text-white">Mallard</span>
             </Link>
