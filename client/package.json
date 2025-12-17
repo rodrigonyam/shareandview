@@ -1,7 +1,7 @@
 {
-  "name": "streamvault-client",
+  "name": "mallard-client",
   "version": "1.0.0",
-  "description": "StreamVault React Frontend",
+  "description": "Mallard React Frontend",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

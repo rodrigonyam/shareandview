@@ -1,6 +1,6 @@
-# 🎥 StreamVault
+# 🎥 Mallard
 
-StreamVault is a full-stack web application for **video storage, streaming, and community engagement**.  
+Mallard is a full-stack web application for **video storage, streaming, and community engagement**.  
 Users can create accounts, upload and share videos, subscribe to channels, like/share content, and support creators through donations.
 
 ---
@@ -56,7 +56,7 @@ Users can create accounts, upload and share videos, subscribe to channels, like/
 ## 📂 Project Structure
 
 ```
-streamvault/
+mallard/
 ├── client/                 # React frontend
 │   ├── public/
 │   ├── src/
@@ -93,8 +93,8 @@ streamvault/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/streamvault.git
-   cd streamvault
+   git clone https://github.com/yourusername/mallard.git
+   cd mallard
    ```
 
 2. **Install dependencies**
@@ -260,4 +260,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-For support, email support@streamvault.com or create an issue on GitHub.
+For support, email support@mallard.com or create an issue on GitHub.

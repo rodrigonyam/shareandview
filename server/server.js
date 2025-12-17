@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Database connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/streamvault', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/mallard', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })

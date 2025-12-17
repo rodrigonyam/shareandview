@@ -1,7 +1,7 @@
 {
-  "name": "streamvault-server",
+  "name": "mallard-server",
   "version": "1.0.0",
-  "description": "StreamVault Backend API",
+  "description": "Mallard Backend API",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -35,6 +35,6 @@
     "express",
     "mongodb"
   ],
-  "author": "StreamVault Team",
+  "author": "Mallard Team",
   "license": "MIT"
 }
